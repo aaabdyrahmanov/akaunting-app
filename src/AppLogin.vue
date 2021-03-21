@@ -1,3 +1,14 @@
+<script>
+import Home from './views/Login/Home.vue'
+
+export default {
+  name: 'App',
+  components: {
+    Home
+  }
+}
+</script>
+
 <template>
   <div class="login-page">
     <div class="header">
@@ -11,19 +22,15 @@
     <div class="container">
       <Home />
     </div>
+    <footer>
+      <div class="container text-white mt-5 mb-4 align-center">
+        <small>
+          Powered By Akaunting: <a href="https://akaunting.com" target="_blank" class="text-white txt-dc-none">Free Accounting Software</a>
+        </small>
+      </div>
+    </footer>
   </div>
 </template>
-
-<script>
-import Home from './views/Installation/Home.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Home
-  }
-}
-</script>
 
 <style>
 *, :after, :before {
@@ -37,7 +44,7 @@ export default {
   background-size: cover;
   height: 100vh;
   width: 100%;
-  padding: 2% 0;
+  padding: 5% 0;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -50,6 +57,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  z-index: 1;
   width: 100%;
   padding: 0 5%;
 }

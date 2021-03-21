@@ -68,17 +68,23 @@ export default {
 
     <!-- Language -->
     <page-language 
-      v-if="currentStep==0" 
+      v-if="currentStep==0"
+      :current-step="currentStep" 
+      :headers="headers"
     />
 
     <!-- Database -->
     <page-database
       v-if="currentStep==1"
+      :current-step="currentStep" 
+      :headers="headers"
     />
     
     <!-- Database -->
     <page-admin
       v-if="currentStep==2"
+      :current-step="currentStep" 
+      :headers="headers"
     />
   </div>
 </template>

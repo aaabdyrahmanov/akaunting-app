@@ -5,9 +5,24 @@ import BaseInput from '@/components/UI/BaseInput'
 
 export default {
   name: 'Database',
+  props: {
+    headers: {
+      type: Array,
+      required: true
+    },
+    currentStep: {
+      type: Number,
+      required: true
+    }
+  },
   components: {
     'the-footer': TheFooter,
     'base-input': BaseInput
+  },
+  data: function () {
+    return {
+      nextPath: ''
+    }
   },
   computed: {
     ...mapGetters({
@@ -17,7 +32,7 @@ export default {
   methods: {
     async moveTo() {
       this.$store.dispatch('installation/updateCurrentStep');
-      this.nextPath = `/installation/${this.headers[this.currentStep].toLowerCase()}`
+      this.nextPath = `/installation/${this.headers[this.currentStep+1].toLowerCase()}`
 
       this.$router.push(this.nextPath)
     }

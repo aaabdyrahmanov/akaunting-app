@@ -5,9 +5,24 @@ import BaseSelect from '@/components/UI/BaseSelect'
 
 export default {
   name: 'Language',
+  props: {
+    headers: {
+      type: Array,
+      required: true
+    },
+    currentStep: {
+      type: Number,
+      required: true
+    }
+  },
   components: {
     'base-select': BaseSelect,
     'the-footer': TheFooter
+  },
+  data: function () {
+    return {
+      nextPath: ''
+    }
   },
   computed: {
     ...mapGetters({
@@ -17,7 +32,7 @@ export default {
   methods: {
     async moveTo() {
       this.$store.dispatch('installation/updateCurrentStep');
-      this.nextPath = `/installation/${this.headers[this.currentStep].toLowerCase()}`
+      this.nextPath = `/installation/${this.headers[this.currentStep+1].toLowerCase()}`
 
       this.$router.push(this.nextPath)
     }
