@@ -34,6 +34,7 @@ export default {
         <span>{{ firstButton.text }}</span>
       </el-button>
       <el-button
+        v-if="secondButton"
         :type="secondButton.type"
         :plain="secondButton.isPlain"
         :class="`btn ${secondButton.classList}`"
@@ -68,19 +69,6 @@ export default {
         @click="$emit(secondButton.trigger.function, secondButton.trigger.argument)"
       >
         <span>{{ secondButton.text }}</span>
-      </el-button>
-    </el-col>
-    <el-col
-      v-if="divide==0"
-      :class="firstButton.class"
-    >
-      <el-button
-        :type="firstButton.type"
-        :plain="firstButton.isPlain"
-        :class="`btn ${firstButton.classList}`"
-        @click="$emit(firstButton.trigger.function, firstButton.trigger.argument)"
-      >
-        <span>{{ firstButton.text }}</span>
       </el-button>
     </el-col>
   </el-row>

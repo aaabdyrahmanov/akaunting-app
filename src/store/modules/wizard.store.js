@@ -15,7 +15,6 @@ const mutationName = {
   SET_FORM_TAX_NUMBER: 'setFormTaxNumber',
   SET_FORM_FINANCIAL_START_DATE: 'setFormFinancialStartDate',
   SET_FORM_ADDRESS: 'setFormAddress',
-  SET_COMPANY_DATA: 'setCompanyData',
   SET_CURRENCIES_DATA: 'setCurrenciesData',
 }
 
@@ -140,11 +139,7 @@ const mutations = {
   },
   [mutationName.SET_CURRENCIES_DATA](state, currency) {
     state.currenciesData = [...state.currenciesData, currency]
-  },
-  [mutationName.SET_COMPANY_DATA](state, { companyApiKey, registrationDate }) {
-    state.form.apiKey = companyApiKey
-    state.form.financialStartDate = registrationDate
-  },
+  }
 }
 
 export default {

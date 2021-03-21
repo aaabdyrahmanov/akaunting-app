@@ -51,20 +51,12 @@ export default {
   -o-background-size: cover;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  z-index: 1;
+.container {
   width: 100%;
-  padding: 0 5%;
-}
-
-#app > h1 {
-  display: flex; 
-  justify-content:left;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .header {
@@ -127,13 +119,5 @@ export default {
   .container {
     max-width: 540px;
   }
-}
-
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 </style>

@@ -1,19 +1,13 @@
 /** installation.store.js */
 
-// import axios from 'axios'
 import langauges from '@/assets/languages.json'
 
 const actionName = {
-  UPDATE_CURRENT_STEP: 'updateCurrentStep',
-  UPDATE_FORM_API_KEY: 'updateFormAPIKey'
+  UPDATE_CURRENT_STEP: 'updateCurrentStep'
 }
 
 const mutationName = {
   SET_CURRENT_STEP: 'setCurrentStep',
-  SET_FORM_API_KEY: 'setFormAPIKey',
-  SET_FORM_TAX_NUMBER: 'setFormTaxNumber',
-  SET_FORM_FINANCIAL_START_DATE: 'setFormFinancialStartDate',
-  SET_FORM_ADDRESS: 'setFormAddress',
   FORWARD_CURRENT_STEP: 'forwardCurrentStep'
 }
 
@@ -174,15 +168,6 @@ const actions = {
 const mutations = {
   [mutationName.SET_CURRENT_STEP](state, step) {
     state.step = step
-  },
-  [mutationName.SET_FORM_TAX_NUMBER](state, taxNumber) {
-    state.form.taxNumber = taxNumber
-  },
-  [mutationName.SET_FORM_FINANCIAL_START_DATE](state, financialStartDate) {
-    state.form.financialStartDate = financialStartDate
-  },
-  [mutationName.SET_FORM_ADDRESS](state, address) {
-    state.form.address = address
   }
 }
 

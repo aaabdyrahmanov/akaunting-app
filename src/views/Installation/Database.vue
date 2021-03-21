@@ -46,7 +46,7 @@ export default {
       :data="databaseForm" 
     />
     <the-footer
-      :divide="0"
+      :divide="1"
       :first-button="{
         isPlain: false,
         type: 'success',
