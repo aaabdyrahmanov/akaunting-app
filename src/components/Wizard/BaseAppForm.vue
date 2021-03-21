@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AppForm',
+  name: 'BaseAppForm',
   props: {
     homePage: {
       type: String,
@@ -191,10 +191,5 @@ label {
 
 .cl-6da252 {
   color: #6da252;
-}
-
-.small, small {
-  font-size: 80%;
-  font-weight: 400;
 }
 </style>

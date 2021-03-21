@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AppList',
+  name: 'BaseAppList',
   props: {
     apps: {
       type: Array,
@@ -32,6 +32,7 @@ export default {
         </div>
         <img
           :src="`https://akaunting.com/public/assets/media/${app.logoSource}`"
+          :alt="`Akaunting_${app.name}`"
           class="image width-100"
           @click="`location.href=${app.url}`"
         >

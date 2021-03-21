@@ -1,18 +1,14 @@
 <script>
-import TheFooter from '../components/Navigation/TheFooter'
-import TableResponsive from '../components/Wizard/TableResponsive'
+import TheFooter from '@/components/Navigation/TheFooter'
+import AppForm from '@/components/Wizard/BaseAppForm'
 
 export default {
-  name: 'Currencies',
+  name: 'Company',
   components: {
-    'table-responsive': TableResponsive,
+    'app-form': AppForm,
     'the-footer': TheFooter
   },
   props: {
-    data: {
-      type: Array,
-      required: true
-    },
     currentStep: {
       type: Number,
       required: true
@@ -29,16 +25,6 @@ export default {
   data: function () {
     return {
       nextPath: ''
-    }
-  },
-  computed: {
-    currenciesData: {
-      get() {
-        return this.$store.state.wizard.currenciesData;
-      },
-      set(value) {
-        this.$store.commit('wizard/setCurrenciesData', value);
-      }
     }
   },
   methods: {
@@ -68,51 +54,36 @@ export default {
 </script>
 
 <template>
-  <div>
-    <div
-      class="card-body"
-    >
-    {{ nextPath }}
-      <el-row>
-        <el-col
-          :span="24"
-          class="align-right"
-        >
-          <el-button
-            type="success"
-            class="btn btn-success btn-sm"
-          >
-            Add New
-          </el-button>
-        </el-col>
-      </el-row>
-    </div>
-    <table-responsive
-      :data="currenciesData"
+  <div
+    class="card-body"
+  >
+    <app-form
+      :home-page="homePage" 
     />
     <the-footer
-      :divide="2"
+      :divide="1"
       :first-button="{
-        isPlain: true,
-        class: 'align-left',
-        classList: 'btn-icon btn-white',
+        isPlain: false,
+        type: 'success',
+        class: 'align-right',
+        classList: 'btn-success',
         trigger: {
-          function: 'moveTo',
-          argument: -1
+          function: 'move',
+          argument: 'save'
         },
-        text: 'Previous'
+        text: 'Save'
       }"
       :second-button="{
         isPlain: true,
-        class: 'align-right',
-        classList: 'btn-icon btn-white',
+        type: '',
+        classList: 'btn-white',
         trigger: {
-          function: 'moveTo',
+          function: 'move',
           argument: 1
         },
-        text: 'Next'
+        text: 'Save'
       }"
-      @moveTo="moveTo($event)"
+      @move="moveTo($event)"
     />
   </div>
 </template>

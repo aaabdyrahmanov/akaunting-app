@@ -8,7 +8,7 @@ export default {
     },
     secondButton: {
       type: Object,
-      required: true
+      required: false
     },
     divide: {
       type: Number,
@@ -68,6 +68,19 @@ export default {
         @click="$emit(secondButton.trigger.function, secondButton.trigger.argument)"
       >
         <span>{{ secondButton.text }}</span>
+      </el-button>
+    </el-col>
+    <el-col
+      v-if="divide==0"
+      :class="firstButton.class"
+    >
+      <el-button
+        :type="firstButton.type"
+        :plain="firstButton.isPlain"
+        :class="`btn ${firstButton.classList}`"
+        @click="$emit(firstButton.trigger.function, firstButton.trigger.argument)"
+      >
+        <span>{{ firstButton.text }}</span>
       </el-button>
     </el-col>
   </el-row>

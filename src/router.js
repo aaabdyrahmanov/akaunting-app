@@ -30,7 +30,27 @@ export default function init(store) {
         name: 'Finish',
         component: Home,
       },
-    ],
+      {
+        path: '/installation/language',
+        name: 'Language',
+        component: Home,
+      },
+      {
+        path: '/installation/database',
+        name: 'Database',
+        component: Home,
+      },
+      {
+        path: '/installation/admin',
+        name: 'Admin',
+        component: Home,
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: Home,
+      }
+    ]
   })
 }
 

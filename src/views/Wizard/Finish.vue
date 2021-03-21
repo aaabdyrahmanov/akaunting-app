@@ -1,6 +1,6 @@
 <script>
-import AppList from '../components/Wizard/AppList'
-import TheFooter from '../components/Navigation/TheFooter'
+import AppList from '@/components/Wizard/BaseAppList'
+import TheFooter from '@/components/Navigation/TheFooter'
 
 export default {
   name: 'Finish',
@@ -71,7 +71,7 @@ export default {
     >
       <p 
         class="align-left cl-ffffff"
-      > {{ nextPath }}
+      >
         Recommended Apps
       </p>
     </div>

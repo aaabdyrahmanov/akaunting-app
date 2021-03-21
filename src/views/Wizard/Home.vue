@@ -1,6 +1,6 @@
 <script>
 import { mapGetters } from 'vuex'
-import TheHeader from '../components/Navigation/TheHeader'
+import TheHeader from '@/components/Navigation/TheHeader'
 
 import Finish from './Finish'
 import Taxes from './Taxes'
@@ -28,18 +28,7 @@ export default {
     ...mapGetters({
       currentStep: 'wizard/getCurrentStep',
       headers: 'wizard/getHeaders'
-    }),
-    currenRoutePath(){
-      return `/wizard/${this.headers[this.currentStep].toLowerCase()}`;
-    },
-    currenciesData: {
-      get() {
-        return this.$store.state.wizard.currenciesData;
-      },
-      set(value) {
-        this.$store.commit('wizard/setCurrenciesData', value);
-      }
-    }
+    })
   },
   beforeCreate () {
     if(!this.routePath) {
@@ -76,7 +65,6 @@ export default {
     <!-- Currencies -->
     <page-currencies
       v-if="currentStep==1"
-      :data="currenciesData"
       :home-page="homePage"
       :current-step="currentStep"
       :headers="headers"
@@ -86,7 +74,6 @@ export default {
     <!-- Taxes -->
     <page-taxes
       v-if="currentStep==2"
-      :data="currenciesData"
       :home-page="homePage"
       :current-step="currentStep"
       :headers="headers"

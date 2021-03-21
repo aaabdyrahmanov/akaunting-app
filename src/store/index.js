@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 
 import wizard from './modules/wizard.store'
+import installation from './modules/installation.store'
 
 Vue.use(Vuex)
 
@@ -12,8 +13,9 @@ axios.defaults.withCredentials = false
 
 const store = new Vuex.Store({
   modules: {
-    wizard
-  },
+    wizard,
+    installation
+  }
 })
 
 export default function init() {

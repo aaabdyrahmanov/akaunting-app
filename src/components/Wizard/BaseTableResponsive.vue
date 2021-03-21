@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'TableResponsive',
+  name: 'BaseTableResponsive',
   props: {
     data: {
       type: Array,

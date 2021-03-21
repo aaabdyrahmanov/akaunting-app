@@ -1,6 +1,6 @@
 <script>
-import TheFooter from '../components/Navigation/TheFooter'
-import TableResponsive from '../components/Wizard/TableResponsive'
+import TheFooter from '@/components/Navigation/TheFooter'
+import TableResponsive from '@/components/Wizard/BaseTableResponsive'
 
 export default {
   name: 'Taxes',
@@ -9,10 +9,6 @@ export default {
     'the-footer': TheFooter
   },
   props: {
-    data: {
-      type: Array,
-      required: true
-    },
     headers: {
       type: Array,
       required: true
@@ -72,7 +68,6 @@ export default {
     <div
     class="card-body"
     >
-    {{ nextPath }}
     <el-row>
         <el-col
           :span="24"
