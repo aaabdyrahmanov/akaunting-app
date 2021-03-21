@@ -1,5 +1,10 @@
 # Akaunting Frontend Developer Case Study - Setup Guide
 
+## Live versions of the Case Study
+- [Installation-Page](https://elegant-nobel-439d00.netlify.app/)
+- [Login-Page](https://suspicious-mcnulty-1431c0.netlify.app/)
+- [Wizard-Page](https://priceless-hamilton-794bfe.netlify.app/)
+
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
