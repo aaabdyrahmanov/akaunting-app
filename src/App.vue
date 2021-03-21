@@ -1,5 +1,5 @@
 <template>
-  <div class="login-page">
+  <div class="installation-page">
     <div class="header">
       <img
         src="https://app.akaunting.com/public/img/akaunting-logo-white.svg"
@@ -31,7 +31,7 @@ export default {
   box-sizing: border-box;
 } 
 
-.login-page {
+.installation-page {
   background: url("../src/assets/login.png");
   background-position: center;
   background-size: cover;
@@ -42,21 +42,6 @@ export default {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  width: 100%;
-  padding: 0 5%;
-}
-
-#app > h1 {
-  display: flex; 
-  justify-content:left;
 }
 
 .header {
