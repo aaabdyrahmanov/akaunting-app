@@ -27,6 +27,7 @@ export default {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 } 
+
 .wizard-page {
   background: url("../src/assets/login.png");
   height: 100vh;
