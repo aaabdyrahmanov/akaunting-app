@@ -20,7 +20,7 @@ export default {
   },
   beforeCreate () {
     if(!this.routePath) {
-      this.$router.push({ name: 'Language' })
+      this.$router.push({ name: 'Login' })
     }
   },
   methods: {
