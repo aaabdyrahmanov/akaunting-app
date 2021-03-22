@@ -53,20 +53,3 @@ export default function init(store) {
     ]
   })
 }
-
-// Admin
-
-// <i class="fas fa-building"></i>
-// <i class="fas fa-envelope"></i>
-// <i class="fas fa-envelope"></i>
-// <i class="fas fa-key"></i>
-
-// Database
-// <i class="fas fa-server"></i>
-// <i class="fas fa-user"></i>
-// <i class="fas fa-key"></i>
-// <i class="fas fa-database"></i>
-
-// Login
-// <i class="fas fa-envelope"></i>
-// <i class="fas fa-unlock-alt"></i>
