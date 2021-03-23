@@ -1,6 +1,6 @@
 # Akaunting Frontend Developer Case Study - Setup Guide
 
-## Live versions of the Case Study
+## Live Demo
 - [Akaunting-Case-Study](https://cranky-kare-cd99ad.netlify.app/)
 
 ## Getting Started
