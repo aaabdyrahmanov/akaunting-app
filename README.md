@@ -1,7 +1,7 @@
 # Akaunting Frontend Developer Case Study - Setup Guide
 
 ## Live Demo
-- [Akaunting-Case-Study](https://cranky-kare-cd99ad.netlify.app/)
+- [Akaunting-Case-Study](https://serene-tereshkova-c24463.netlify.app)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
