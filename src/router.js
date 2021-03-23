@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Home from './App.vue'
+import Installation from '@/components/pages/Installation/Home'
+import Login from '@/components/pages/Login/Home'
+import Wizard from '@/components/pages/Wizard/Home'
 
 Vue.use(Router)
 
@@ -13,42 +15,42 @@ export default function init(store) {
       {
         path: '/wizard/company',
         name: 'Company',
-        component: Home,
+        component: Wizard,
       },
       {
         path: '/wizard/currencies',
         name: 'Currencies',
-        component: Home,
+        component: Wizard,
       },
       {
         path: '/wizard/taxes',
         name: 'Taxes',
-        component: Home,
+        component: Wizard,
       },
       {
         path: '/wizard/finish',
         name: 'Finish',
-        component: Home,
+        component: Wizard,
       },
       {
         path: '/installation/language',
         name: 'Language',
-        component: Home,
+        component: Installation,
       },
       {
         path: '/installation/database',
         name: 'Database',
-        component: Home,
+        component: Installation,
       },
       {
         path: '/installation/admin',
         name: 'Admin',
-        component: Home,
+        component: Installation,
       },
       {
         path: '/login',
         name: 'Login',
-        component: Home,
+        component: Login
       }
     ]
   })

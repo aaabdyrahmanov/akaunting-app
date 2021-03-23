@@ -1,7 +1,7 @@
 <script>
 import { mapGetters } from 'vuex'
-import TheFooter from '@/components/Navigation/TheFooter'
-import BaseInput from '@/components/UI/BaseInput'
+import TheFooter from '@/components/shared/Navigation/TheFooter'
+import BaseInput from '@/components/shared/UI/BaseInput'
 
 export default {
   name: 'Admin',
@@ -34,7 +34,7 @@ export default {
       this.$store.dispatch('installation/updateCurrentStep', 2);
       this.nextPath = `/installation/${this.headers[this.currentStep].toLowerCase()}`
 
-      this.$router.push(this.nextPath)
+      this.$router.push({ name: 'Login'})
     }
   }
 }

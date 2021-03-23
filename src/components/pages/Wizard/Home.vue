@@ -1,6 +1,7 @@
 <script>
 import { mapGetters } from 'vuex'
-import TheHeader from '@/components/Navigation/TheHeader'
+
+import TheHeader from '@/components/shared/Navigation/TheHeader'
 
 import Finish from './Finish'
 import Taxes from './Taxes'
@@ -47,50 +48,95 @@ export default {
 </script>
 
 <template>
-  <div class="card">
-    <!-- Header -->
-    <the-header
-      :current-step="currentStep" 
-      :header-list="headers"
-    />
+  <div class="wizard-page">
+    <div class="container-wizard">
+      <h1 class="text-white">
+        Wizard
+      </h1>
+      <div class="card">
+        <!-- Header -->
+        <the-header
+          :current-step="currentStep" 
+          :header-list="headers"
+        />
 
-    <!-- Company -->
-    <page-company
-      v-if="currentStep==0"
-      :home-page="homePage"
-      :current-step="currentStep"
-      :headers="headers"
-    />
+        <!-- Company -->
+        <page-company
+          v-if="currentStep==0"
+          :home-page="homePage"
+          :current-step="currentStep"
+          :headers="headers"
+        />
 
-    <!-- Currencies -->
-    <page-currencies
-      v-if="currentStep==1"
-      :home-page="homePage"
-      :current-step="currentStep"
-      :headers="headers"
-    />
+        <!-- Currencies -->
+        <page-currencies
+          v-if="currentStep==1"
+          :home-page="homePage"
+          :current-step="currentStep"
+          :headers="headers"
+        />
 
 
-    <!-- Taxes -->
-    <page-taxes
-      v-if="currentStep==2"
-      :home-page="homePage"
-      :current-step="currentStep"
-      :headers="headers"
-    />
-    
-    <!-- Finish -->
-    <page-finish
-      v-if="currentStep==3"
-      :apps="recommendedApps"
-      :home-page="homePage"
-      :current-step="currentStep"
-      :headers="headers"
-    />
+        <!-- Taxes -->
+        <page-taxes
+          v-if="currentStep==2"
+          :home-page="homePage"
+          :current-step="currentStep"
+          :headers="headers"
+        />
+        
+        <!-- Finish -->
+        <page-finish
+          v-if="currentStep==3"
+          :apps="recommendedApps"
+          :home-page="homePage"
+          :current-step="currentStep"
+          :headers="headers"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <style>
+.wizard-page {
+  background: url("../../../assets/login.png");
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 0;
+  z-index: -1;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+
+.container-wizard {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .container-wizard {
+    max-width: 720px;
+  }
+}
+@media (min-width: 768px) {
+  .container-wizard {
+    max-width: 9600px;
+  }
+}
+@media (min-width: 576px) {
+  .container-wizard {
+    max-width: 1180px;
+  }
+}
+
 .card {
   position: relative;
   display: -webkit-box;
@@ -152,5 +198,9 @@ export default {
 
 .bell-icon {
   margin-right: 20px;
+}
+
+.text-white {
+  color: #ffffff !important;
 }
 </style>

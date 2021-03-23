@@ -1,116 +1,91 @@
 <template>
-  <div class="installation-page">
-    <div class="header">
-      <img
-        src="https://app.akaunting.com/public/img/akaunting-logo-white.svg"
-        alt="Akaunting"
-        style="width:12%;"
-        class="mb-3"
-      >
+  <div id="app">
+    <div 
+      id="home"
+      v-if="route=='/'"
+    >
+      <h1>Akaunting Frontend Developer Case Study</h1>
+      <ul>
+        <li>
+          <router-link class="nav-link" to="/installation/language"><button  class="btn-main">Installation Page</button> </router-link>
+        </li>
+        <li>
+          <router-link :to="{ name: 'Company' }"> <button class="btn-main"> Wizard Page</button></router-link>
+        </li>
+      </ul>
     </div>
-    <div class="container">
-      <Home />
+    <div>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-import Home from './views/Installation/Home.vue'
-
 export default {
   name: 'App',
-  components: {
-    Home
+  computed: {
+    route () {
+      return this.$route.path;
+    }
   }
 }
 </script>
 
 <style>
-*, :after, :before {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-} 
-
-.installation-page {
-  background: url("../src/assets/login.png");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  padding: 2% 0;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
-.header {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
-  margin: auto;
+#home {
   text-align: center;
+  background-color: #eeeeee;
+  width: 100%;
+  height: 100vh;
+  background: #55588b;
 }
 
-.mb-3 {
-  margin-bottom: 3rem!important;
-}
-
-.mb-4 {
-  margin-bottom: 1.5rem!important;
-}
-
-.mt-5 {
-  margin-top: 3rem!important;
-}
-
-.text-white {
-  color: #ffffff !important;
-}
-
-.txt-dc-none {
+#home h1 {
+  padding-top: 40px;
+  font-size: 3rem;
+  color: #fff;
+  padding-bottom: 20px;
   text-decoration: none;
 }
 
-.small, small {
-  font-size: 80%;
+#home ul li {
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  color: green;
+}
+#home ul li a {
+  text-decoration: none;
+}
+
+.btn-main {
+  box-sizing: border-box;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #3498db;
+  text-decoration: none;
+  border-radius: 0.6em;
+  color: ;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-size: 1rem;
   font-weight: 400;
+  line-height: 1;
+  margin: 20px auto;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  border-color: #3498db;
+  color: #fff;
+  box-shadow: 0 0 40px 40px #3498db inset, 0 0 0 0 #3498db;
+  transition: all 150ms ease-in-out; 
 }
-
-.align-left {
-  text-align: left!important;
-}
-
-.align-right {
-  text-align: right!important;
-}
-
-.align-center {
-  text-align: center!important;
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
-
-.container {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+.btn-main:hover, .btn:focus {
+  color: #f5dcdc;
+  box-shadow: 0 0 10px 0 #3498db inset, 0 0 10px 4px #3498db;
 }
 </style>

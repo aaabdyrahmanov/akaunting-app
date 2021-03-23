@@ -1,6 +1,6 @@
 <script>
-import AppList from '@/components/Wizard/BaseAppList'
-import TheFooter from '@/components/Navigation/TheFooter'
+import AppList from '@/components/shared/Wizard/BaseAppList'
+import TheFooter from '@/components/shared/Navigation/TheFooter'
 
 export default {
   name: 'Finish',

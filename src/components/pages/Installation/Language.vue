@@ -1,10 +1,10 @@
 <script>
 import { mapGetters } from 'vuex'
-import TheFooter from '@/components/Navigation/TheFooter'
-import BaseInput from '@/components/UI/BaseInput'
+import TheFooter from '@/components/shared/Navigation/TheFooter'
+import BaseSelect from '@/components/shared/UI/BaseSelect'
 
 export default {
-  name: 'Database',
+  name: 'Language',
   props: {
     headers: {
       type: Array,
@@ -16,8 +16,8 @@ export default {
     }
   },
   components: {
-    'the-footer': TheFooter,
-    'base-input': BaseInput
+    'base-select': BaseSelect,
+    'the-footer': TheFooter
   },
   data: function () {
     return {
@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      databaseForm: 'installation/getDatabaseForm'
+      languageForm: 'installation/getLanguageForm'
     })
   },
   methods: {
@@ -41,9 +41,11 @@ export default {
 </script> 
 
 <template>
-  <div class="card-body">
-    <base-input 
-      :data="databaseForm" 
+  <div
+    class="card-body"
+  >
+    <base-select
+      :data="languageForm.list"
     />
     <the-footer
       :divide="1"

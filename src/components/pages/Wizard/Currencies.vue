@@ -1,6 +1,6 @@
 <script>
-import TheFooter from '@/components/Navigation/TheFooter'
-import TableResponsive from '@/components/Wizard/BaseTableResponsive'
+import TheFooter from '@/components/shared/Navigation/TheFooter'
+import TableResponsive from '@/components/shared/Wizard/BaseTableResponsive'
 
 export default {
   name: 'Currencies',
