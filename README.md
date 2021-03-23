@@ -1,28 +1,7 @@
 # Akaunting Frontend Developer Case Study - Setup Guide
 
-## Overview
-This app has 3 seperate pages which does not belong on each other. Due to pending improvements on routing issues, the entire project was not handled as a single app. For now, to run pages one by one seperately, implement the guide sampled below. 
-
-```bash
-# move into project folder
-cd akaunting-case-study
-
-# move into project source folder
-cd src
-
-# rename the default root page
-mv App.vue AppInstallation.vue
-
-# select and rename the preferred page as root page
-mv AppWizard.vue App.vue
-```
-After making these changes to run the project on your local machine, please follow the guide below.
-
-
 ## Live versions of the Case Study
-- [Installation-Page](https://elegant-nobel-439d00.netlify.app/)
-- [Login-Page](https://suspicious-mcnulty-1431c0.netlify.app/)
-- [Wizard-Page](https://priceless-hamilton-794bfe.netlify.app/)
+- [Akaunting-Case-Study](https://cranky-kare-cd99ad.netlify.app/)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
