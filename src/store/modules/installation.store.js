@@ -15,6 +15,10 @@ const mutationName = {
 const state = {
   step: 0,
   headers: ['Language', 'Database', 'Admin'],
+  logoInfo: {
+    src: "https://app.akaunting.com/public/img/akaunting-logo-white.svg",
+    description: "Akaunting-logo"
+  },
   language: {
     name: '',
     list: langauges
@@ -146,6 +150,9 @@ const getters = {
   },
   getLoginForm: (state) => {
     return state.login
+  },
+  getLogoInfo: (state) => {
+    return state.logoInfo
   }
 }
 

@@ -1,5 +1,4 @@
 <script>
-import { mapGetters } from 'vuex'
 import TheFooter from '@/components/shared/Navigation/TheFooter'
 import BaseSelect from '@/components/shared/UI/BaseSelect'
 
@@ -13,6 +12,10 @@ export default {
     currentStep: {
       type: Number,
       required: true
+    },
+    data: {
+      type: Object,
+      required: true
     }
   },
   components: {
@@ -23,11 +26,6 @@ export default {
     return {
       nextPath: ''
     }
-  },
-  computed: {
-    ...mapGetters({
-      languageForm: 'installation/getLanguageForm'
-    })
   },
   methods: {
     async moveTo() {
@@ -45,7 +43,7 @@ export default {
     class="card-body"
   >
     <base-select
-      :data="languageForm.list"
+      :data="data.list"
     />
     <the-footer
       :divide="1"

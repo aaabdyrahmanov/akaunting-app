@@ -1,6 +1,8 @@
 <script>
 import { mapGetters } from 'vuex'
+
 import TheHeader from '@/components/shared/Navigation/TheHeader'
+import BaseAppLogo from '@/components/shared/Installation/BaseAppLogo'
 
 import Language from './Language'
 import Database from './Database'
@@ -9,38 +11,27 @@ import Admin from './Admin'
 export default {
   name: 'Home',
   components: {
+    'base-app-logo': BaseAppLogo,
     'page-language': Language,
     'page-database': Database,
     'page-admin': Admin,
     'the-header': TheHeader
   },
-  data: function () {
-    return {
-      isRememberMeChecked: false,
-      homePage: this.$store.state.wizard.homePageUrl,
-      recommendedApps: this.$store.state.wizard.recommendedApps,
-      routeName: this.$route.name,
-      routePath: this.$route.path
-    }
-  },
   computed: {
     ...mapGetters({
       currentStep: 'installation/getCurrentStep',
       headers: 'installation/getHeaders',
+      logoInfo: 'installation/getLogoInfo',
       languageForm: 'installation/getLanguageForm',
       databaseForm: 'installation/getDatabaseForm',
       adminForm: 'installation/getAdminForm'
-    }),
-    currenRoutePath(){
-      return `/installation/${this.headers[this.currentStep].toLowerCase()}`;
-    },
+    })
   },
   created () {
     this.updatePage()
   },
   methods: {
     updatePage() {
-
       this.$store.dispatch('installation/updateCurrentStep', 0);
     },
     async moveTo() {
@@ -55,14 +46,10 @@ export default {
 
 <template>
   <div class="installation-page">
-    <div class="header">
-      <img
-        src="https://app.akaunting.com/public/img/akaunting-logo-white.svg"
-        alt="Akaunting"
-        style="width:12%;"
-        class="mb-3"
-      >
-    </div>
+    <!-- Logo -->    
+    <base-app-logo
+      :logo="logoInfo" 
+    />
     <div class="container">
       <div class="card">
         <!-- Header -->
@@ -76,6 +63,7 @@ export default {
           v-if="currentStep==0"
           :current-step="currentStep" 
           :headers="headers"
+          :data="languageForm"
         />
 
         <!-- Database -->
@@ -83,6 +71,7 @@ export default {
           v-if="currentStep==1"
           :current-step="currentStep" 
           :headers="headers"
+          :data="databaseForm"
         />
         
         <!-- Database -->
@@ -90,6 +79,7 @@ export default {
           v-if="currentStep==2"
           :current-step="currentStep" 
           :headers="headers"
+          :data="adminForm"
         />
       </div>
     </div>
@@ -113,23 +103,6 @@ export default {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-}
-
-.header {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
-  margin: auto;
-  text-align: center;
-}
-
-.mb-3 {
-  margin-bottom: 3rem!important;
-}
-
-.mb-4 {
-  margin-bottom: 1.5rem!important;
 }
 
 .mt-5 {

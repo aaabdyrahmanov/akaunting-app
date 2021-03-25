@@ -68,7 +68,9 @@ export default {
         :class="`btn ${secondButton.classList}`"
         @click="$emit(secondButton.trigger.function, secondButton.trigger.argument)"
       >
-        <span>{{ secondButton.text }}</span>
+        <span>
+          {{ secondButton.text }}
+        </span>
       </el-button>
     </el-col>
   </el-row>

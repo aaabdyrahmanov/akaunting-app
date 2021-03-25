@@ -68,7 +68,7 @@ export default {
     <div
     class="card-body"
     >
-    <el-row>
+      <el-row>
         <el-col
           :span="24"
           class="align-right"

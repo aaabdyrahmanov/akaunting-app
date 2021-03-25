@@ -42,7 +42,7 @@ export default {
     }
   },
   methods: {
-    beforeRemove(file, fileList) {
+    beforeRemove(file) {
       return this.$confirm(`Cancel the transfert of ${ file.name } ?`);
     }
   }

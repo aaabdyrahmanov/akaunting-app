@@ -1,16 +1,13 @@
 /** wizard.store.js */
 
-// import axios from 'axios'
+import axios from 'axios'
 
 const actionName = {
-  UPDATE_CURRENT_STEP: 'updateCurrentStep',
-  UPDATE_FORM_API_KEY: 'updateFormAPIKey',
-  POST_COMPANY_DATA: 'postCompanyData',
+  UPDATE_CURRENT_STEP: 'updateCurrentStep'
 }
 
 const mutationName = {
   SET_CURRENT_STEP: 'setCurrentStep',
-  SET_CURRENT_STEPP: 'setCurrentStepp',
   SET_FORM_API_KEY: 'setFormAPIKey',
   SET_FORM_TAX_NUMBER: 'setFormTaxNumber',
   SET_FORM_FINANCIAL_START_DATE: 'setFormFinancialStartDate',
@@ -95,13 +92,7 @@ const getters = {
   },
   getHeaders: (state) => {
     return state.headers
-  },
-  getFormApiKey: (state) => {
-    return state.form.apiKey
-  },
-  getFormRegistrationDate: (state) => {
-    return state.form.registrationDate
-  },
+  }
 }
 
 // Actions
@@ -112,8 +103,8 @@ const actions = {
   [actionName.UPDATE_COMPANY_API_KEY]({ commit }, data) {
     commit('setCompanyAPIKey', data)
   },
-  async [actionName.POST_COMPANY_DATA]({ commit }, data) {
-    // await axios.post('/company', data)
+  async [actionName.POST_COMPANY_DATA](data) {
+    await axios.post('/company', data)
   },
 }
 

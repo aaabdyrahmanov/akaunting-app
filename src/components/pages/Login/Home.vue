@@ -1,13 +1,15 @@
 <script>
 import { mapGetters } from 'vuex'
+import BaseAppLogo from '@/components/shared/Installation/BaseAppLogo'
+
 export default {
   name: 'Home',
+  components: {
+    'base-app-logo': BaseAppLogo,
+  },
   data: function () {
     return {
       isRememberMeChecked: false,
-      homePage: this.$store.state.wizard.homePageUrl,
-      recommendedApps: this.$store.state.wizard.recommendedApps,
-      routeName: this.$route.name,
       routePath: this.$route.path
     }
   },
@@ -15,7 +17,8 @@ export default {
     ...mapGetters({
       currentStep: 'installation/getCurrentStep',
       headers: 'installation/getHeaders',
-      loginForm: 'installation/getLoginForm'
+      loginForm: 'installation/getLoginForm',
+      logoInfo: 'installation/getLogoInfo'
     })
   },
   beforeCreate () {
@@ -33,14 +36,10 @@ export default {
 
 <template>
   <div class="login-page">
-    <div class="header">
-      <img
-        src="https://app.akaunting.com/public/img/akaunting-logo-white.svg"
-        alt="Akaunting"
-        style="width:12%;"
-        class="mb-3"
-      >
-    </div>
+    <!-- Logo -->    
+    <base-app-logo
+      :logo="logoInfo" 
+    />
     <div class="container">
       <div class="card login-card">
         <div class="card-body pl-3">
@@ -79,7 +78,12 @@ export default {
                 class="form-group align-left"
                 :span="16"
               >
-                <el-checkbox v-model="isRememberMeChecked" class="text-white">Remember Me</el-checkbox>
+                <el-checkbox 
+                  v-model="isRememberMeChecked" 
+                  class="text-white"
+                >
+                  Remember Me
+                </el-checkbox>
               </el-col>
               <el-col
                 class="form-group align-right"
@@ -138,15 +142,6 @@ export default {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
-
-.header {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 50%;
-  flex: 0 0 50%;
-  max-width: 50%;
-  margin: auto;
-  text-align: center;
 }
 
 .mb-3 {

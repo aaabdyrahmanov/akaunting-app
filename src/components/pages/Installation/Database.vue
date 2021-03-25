@@ -1,6 +1,4 @@
 <script>
-import { mapGetters } from 'vuex'
-
 import TheFooter from '@/components/shared/Navigation/TheFooter'
 import BaseInput from '@/components/shared/UI/BaseInput'
 
@@ -14,6 +12,10 @@ export default {
     currentStep: {
       type: Number,
       required: true
+    },
+    data: {
+      type: Object,
+      required: true
     }
   },
   components: {
@@ -24,11 +26,6 @@ export default {
     return {
       nextPath: ''
     }
-  },
-  computed: {
-    ...mapGetters({
-      databaseForm: 'installation/getDatabaseForm'
-    })
   },
   methods: {
     async moveTo() {
@@ -44,7 +41,7 @@ export default {
 <template>
   <div class="card-body">
     <base-input 
-      :data="databaseForm" 
+      :data="data" 
     />
     <the-footer
       :divide="1"
