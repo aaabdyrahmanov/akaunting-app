@@ -7,7 +7,7 @@ import Wizard from '@/components/pages/Wizard/Home'
 
 Vue.use(Router)
 
-export default function init(store) {
+export default function init() {
   return new Router({
     mode: 'history',
     base: process.env.BASE_URL,

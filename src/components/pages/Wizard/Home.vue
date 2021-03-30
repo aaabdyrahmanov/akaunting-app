@@ -31,7 +31,7 @@ export default {
       headers: 'wizard/getHeaders'
     })
   },
-  beforeCreate () {
+  mounted () {
     if(!this.routePath) {
       this.$router.push({ name: 'Company' })
     }
@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     updatePage() {
-      this.$store.commit('wizard/setCurrentStepp', this.headers.indexOf(this.routeName));
+      this.$store.commit('wizard/setCurrentStep', this.headers.indexOf(this.routeName));
     }
   }
 }
@@ -112,7 +112,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-
 
 .container-wizard {
   padding-right: 15px;

@@ -3,7 +3,8 @@
 import axios from 'axios'
 
 const actionName = {
-  UPDATE_CURRENT_STEP: 'updateCurrentStep'
+  UPDATE_CURRENT_STEP: 'updateCurrentStep',
+  POST_COMPANY_DATA: 'postCompanyData'
 }
 
 const mutationName = {
